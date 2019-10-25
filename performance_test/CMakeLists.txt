@@ -117,9 +117,6 @@ else()
 endif()
 if(CycloneDDS_FOUND)
   set(PERFORMANCE_TEST_CYCLONEDDS_ENABLED TRUE)
-  add_definitions(-DPERFORMANCE_TEST_CYCLONEDDS_ENABLED)
-  add_subdirectory(src/idlgen/cyclonedds)
-  include_directories(${CYCLONEDDS_IDL_INCLUDE_DIR})
 endif()
 
 if(PERFORMANCE_TEST_ODB_FOR_SQL_ENABLED)
@@ -287,7 +284,6 @@ endif()
 
 if(PERFORMANCE_TEST_CYCLONEDDS_ENABLED)
   target_link_libraries(${EXE_NAME}
-      cyclonedds_idl
       CycloneDDS::ddsc)
 endif()
 

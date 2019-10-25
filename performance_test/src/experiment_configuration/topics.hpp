@@ -105,34 +105,6 @@
   #include <micro/RadarTrack_Support.h>
 #endif
 
-// Cyclone DDS Types:
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  #include <cyclonedds/Array1k_.h>
-  #include <cyclonedds/Array4k_.h>
-  #include <cyclonedds/Array16k_.h>
-  #include <cyclonedds/Array32k_.h>
-  #include <cyclonedds/Array60k_.h>
-  #include <cyclonedds/Array1m_.h>
-  #include <cyclonedds/Array2m_.h>
-  #include <cyclonedds/Array4m_.h>
-
-  #include <cyclonedds/Struct16_.h>
-  #include <cyclonedds/Struct256_.h>
-  #include <cyclonedds/Struct4k_.h>
-  #include <cyclonedds/Struct32k_.h>
-
-  #include <cyclonedds/PointCloud512k_.h>
-  #include <cyclonedds/PointCloud1m_.h>
-  #include <cyclonedds/PointCloud2m_.h>
-  #include <cyclonedds/PointCloud4m_.h>
-
-  #include <cyclonedds/Range_.h>
-  #include <cyclonedds/NavSatFix_.h>
-
-  #include <cyclonedds/RadarDetection_.h>
-  #include <cyclonedds/RadarTrack_.h>
-#endif
-
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -162,14 +134,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array1k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array1k__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("Array1k");
@@ -191,14 +155,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__Array4k_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array4k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array4k__desc;
   }
 #endif
 
@@ -226,14 +182,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array16k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array16k__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("Array16k");
@@ -255,14 +203,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__Array32k_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array32k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array32k__desc;
   }
 #endif
 
@@ -290,14 +230,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array60k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array60k__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("Array60k");
@@ -319,14 +251,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__Array1m_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array1m_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array1m__desc;
   }
 #endif
 
@@ -354,14 +278,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Array2m_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Array2m__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("Array2m");
@@ -382,14 +298,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__Struct16_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Struct16_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Struct16__desc;
   }
 #endif
 
@@ -416,14 +324,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Struct256_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Struct256__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("Struct256");
@@ -444,14 +344,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__Struct4k_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Struct4k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Struct4k__desc;
   }
 #endif
 
@@ -478,14 +370,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Struct32k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Struct32k__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("Struct32k");
@@ -506,14 +390,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__PointCloud512k_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__PointCloud512k_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__PointCloud512k__desc;
   }
 #endif
 
@@ -540,14 +416,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__PointCloud1m_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__PointCloud1m__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("PointCloud1m");
@@ -568,14 +436,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__PointCloud2m_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__PointCloud2m_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__PointCloud2m__desc;
   }
 #endif
 
@@ -602,14 +462,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__PointCloud4m_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__PointCloud4m__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("PointCloud4m");
@@ -630,14 +482,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__Range_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__Range_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__Range__desc;
   }
 #endif
 
@@ -664,14 +508,6 @@ public:
   }
 #endif
 
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__NavSatFix_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__NavSatFix__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("NavSatFix");
@@ -694,15 +530,6 @@ public:
     return performance_test_msgs_msg_dds__RadarDetection_TypePlugin_get();
   }
 #endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__RadarDetection_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__RadarDetection__desc;
-  }
-#endif
-
   static std::string topic_name()
   {
     return std::string("RadarDetection");
@@ -723,14 +550,6 @@ public:
   static NDDS_Type_Plugin * ConnextDDSMicroTypePlugin()
   {
     return performance_test_msgs_msg_dds__RadarTrack_TypePlugin_get();
-  }
-#endif
-
-#ifdef PERFORMANCE_TEST_CYCLONEDDS_ENABLED
-  using CycloneDDSType = performance_test_msgs_msg_dds__RadarTrack_;
-  static const dds_topic_descriptor_t * CycloneDDSDesc()
-  {
-    return &performance_test_msgs_msg_dds__RadarTrack__desc;
   }
 #endif
 
