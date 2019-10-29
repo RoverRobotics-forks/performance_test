@@ -16,21 +16,26 @@ def run_experiment(
         
     new_env = dict(os.environ)
     new_env['RMW_IMPLEMENTATION'] = rmw
-    
-    try:
-      res = subprocess.run(['perf_test',
+        
+    test_record ={
+            cmd = ['perf_test',
                     '--topic','topic',
                     '--rate','rate',
                     '--num_subs' str(num_subs),
-                   ], timeout=timeout+0.5, capture_output=True, env=new_env)
-      o= res.stdout
+                   ],
+            timeout = timeout,
+            env = new_env,
+    }
+    
+    try:
+      res = subprocess.run(test_record['cmd']
+                 , timeout=timeout+0.5, capture_output=True, env=new_env)
+      test_record['stdout']= res.stdout
+      test_record['stderr']= res.stderr
      except TimeoutExpired as e:
-      o = e.stdout
-     rawdata = {
-             "kwargs": kwargs,
-             "stdout": o,
-     }
-
+      test_record['stdout'] =e.stdout
+      test_record['stderr'] =e.stderr
+     
 
 def run_experiments():
     pass
