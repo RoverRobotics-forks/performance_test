@@ -27,7 +27,7 @@ find_package(Boost COMPONENTS program_options REQUIRED)
 find_package(ament_cmake REQUIRED)
 
 # FastRTPS
-option(PERFORMANCE_TEST_FASTRTPS_ENABLED "Enable FastRTPS" ON)
+option(PERFORMANCE_TEST_FASTRTPS_ENABLED "Enable FastRTPS" OFF)
 
 if(PERFORMANCE_TEST_FASTRTPS_ENABLED)
   find_package(fastrtps_cmake_module QUIET REQUIRED)
